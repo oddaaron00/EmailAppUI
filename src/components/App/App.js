@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DateSelector from '../DateSelector/DateSelector';
 import EmailCount from '../EmailCount/EmailCount';
+import EmailContainer from '../EmailContainer/EmailContainer';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
     <div className='App'>
       <DateSelector dateRange={dateRange}/>
       <EmailCount numberOfEmails={dummyData.numberOfEmails}/>
+      <EmailContainer numberOfEmails={dummyData.numberOfEmails}/>
     </div>
   );
 }
