@@ -1,8 +1,13 @@
 import './EmailContainer.css';
 import NoEmails from "../NoEmails/NoEmails";
 import EmailSnippet from '../EmailSnippet/EmailSnippet';
+import arrowUp from '../../assets/images/icon_arrow01.svg';
+import arrowDown from '../../assets/images/icon_arrow01_down.svg';
+import { useState } from 'react';
 
-export default function EmailContainer({ numberOfEmails, emails }) {
+export default function EmailContainer({ numberOfEmails, emails, setSort }) {
+    const [sortDesc, setSortDesc] = useState();
+
     const table = (
         <table id='emailTable'>
             <thead id='tableHeader'>
