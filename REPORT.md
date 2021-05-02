@@ -1,0 +1,1 @@
+First things first, I made a new React app using create-react-app, set up the Git repo, and restructured the src folder. I then removed any unnecessary code for my solution, including some of the manifest.json - I can come back to it once I'm done if I plan on making this a PWA.
