@@ -10,8 +10,7 @@ function App() {
     endDate: new Date('2020/1/1')
   });
 
-  const dummyData = {
-    numberOfEmails: 0,
+  const [dummyData, setDummyData] = useState({
     emails: [
       {
         id: 0,
@@ -61,12 +60,12 @@ function App() {
         date: new Date('2010-10-10 10:10')
       }
     ]
-  }
+  })
 
   return (
     <div className='App'>
       <DateSelector dateRange={dateRange}/>
-      <EmailCount numberOfEmails={dummyData.numberOfEmails}/>
+      <EmailCount numberOfEmails={dummyData.emails.length}/>
       <EmailContainer emails={dummyData.emails}/>
     </div>
   );
