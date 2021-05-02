@@ -1,16 +1,9 @@
 First things first, I made a new React app using create-react-app, set up the Git repo, and restructured the src folder. I then removed any unnecessary code for my solution, including some of the manifest.json - I can come back to it once I'm done if I plan on making this a PWA.
 
-The first component I worked on was the date selector (DateSelector). This is composed of a date selector button, a search button, and a text field that displays the selected date range. Thus, it must be a stateful component and does not require props.
-
-
-
-
 There are really two cases here: one for no emails, and one for at least one email. For both cases, a data selector is required, so this is the first component I worked on. It consists of a a date selector button, a search button, and a text field that displays the selected date range. These items are displayed horizontally so I used a flexbox. I put the PDF document into an image manipulation program to get the exact dimensions for margin and font size, so these should look more or less exactly the same. I used an online tool to find a font smiliar to the one used here and did this for the rest of the components in this solution. At this point, I added some dummy state - a start and end date - and two dummy functions that would, once implemented, open the calender, and filter the emails by date, respectfully.
 The rest of this case was simple to complete, with a caveat. I made the component EmailCount, which displays the number of emails in the date range, and added the logo, but I could only get it aligned horizontally. I would come back to this later as it's a minor issue. Since EmailCount depends on the date range selected in the DateSelector component, I then raised the DateSelector state to the containing component, App.
 
-
-
-
-
-
-The second component I worked on was the single email snippet (EmailSnippet); this is the shortform of the email that is displayed in the list. Each email appears to have a sender, a number of recipients, a subject, a body, and a date. Some also have attachments.
+The second component I worked on was the email snippet (EmailSnippet); this is the shortform of the email that is displayed in EmailContainer. Each email appears to have a sender, a number of recipients, a subject, a body, and a date. Some also have attachments.
+Firstly, I created some dummy data in App to be passed down as props to each EmailSnippet through the EmailContainer. EmailContainer delegates each email object to an EmailSnippet component with each key being the email.id.
+I see in the PDF that, if there is only one recipient and it is too long for the column, it is truncated with ellipsis. However, if there is more than one recipient, only a whole number of recipients are shown, and the following recipients are cut off with a badge to show how many aren't shown. To mirror this functionality, I wrote the function calculateCutoff, which changes the CSS rules depending on the situation.
+It's very easy to implement a rule for on:hover such that the text in the row the mouse is hovering over turns blue, but it's more difficult to implement this and have the paperclip SVG change colour too. I created a blue paperclip SVG (icon_clip_hover) and implemented some stateful logic that changed both the style of the text and the SVG on row hover.

@@ -16,7 +16,7 @@ export default function EmailContainer({ numberOfEmails, emails }) {
                 </tr>
             </thead>
             <tbody>
-                {emails.map(email => <EmailSnippet email={email}/>)}
+                {emails.map(email => <EmailSnippet key={email.id} email={email}/>)}
             </tbody>
         </table>
     )

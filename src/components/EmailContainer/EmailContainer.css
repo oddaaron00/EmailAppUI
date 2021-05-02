@@ -1,5 +1,49 @@
+@font-face {
+    font-family: 'PragmaticaCTT';
+    src:url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.woff') format('woff'),
+        url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.svg#PragmaticaCTT') format('svg'),
+        url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.eot'),
+        url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.eot#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AlteHaasGrotesk';
+    src:url('../../assets/fonts/AlteHaasGrotesk/Fonts/altehaasgroteskbold.ttf');
+}
+#emailTable {
+    margin-top: 36px;
+    width: 100%;
+}
+
 #emailContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0px 88px;
 }
+
+#tableHeader {
+    text-align: left;
+    font-family: 'AlteHaasGrotesk', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #666666;
+    font-size: 12pt;
+}
+
+#dateHeader {
+    color: #111111;
+}
+
+td {
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+td.senderCol { width: 14%; }
+td.recipsCol { width: 20%; }
+td.extraRecips { width: 4%; }
+td.subjCol { width: 47%; }
+td.attCol { width: 4%; }
+td.dateCol { width: 11%; }
