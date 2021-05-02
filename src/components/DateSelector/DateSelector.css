@@ -1,0 +1,5 @@
+#openCalenderButton {
+
+    background: url('src/assets/icon_calender.svg');
+    background-size: contain;
+}
