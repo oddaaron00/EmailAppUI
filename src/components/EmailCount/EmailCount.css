@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'AlteHaasGrotesk';
+    src:url('../../assets/fonts/AlteHaasGrotesk/Fonts/altehaasgroteskbold.ttf');
+}
+
+#emailCount {
+    margin-left: 72px;
+    margin-top: 29px;
+    font-family: 'AlteHaasGrotesk';
+    font-size: 13pt;
+    color: #666666;
+}
+
+#countNumber {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 19pt;
+}

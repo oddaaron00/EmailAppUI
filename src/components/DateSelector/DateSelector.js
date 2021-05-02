@@ -1,17 +1,20 @@
-import { useState } from 'react'
+import './DateSelector.css';
+import calenderIcon from '../../assets/images/icon_calender.svg';
+import searchIcon from '../../assets/images/icon_search.svg';
 
-export default function DateSelector() {
-    const [dateRange, setDateRange] = useState('');
+export default function DateSelector({dateRange}) {
+
+    const openCalender = () => {}
+
+    const search = () => {}
 
     return (
-        <div id='dateSelector'>
-            <button id='openCalenderButton'>
-            </button>
-                <img src='src/assets/icon_calender.svg' alt='Open calender'/>
-            <p>TEXT</p>
-            <button id='searchDatesButton'>
-                <img src='src/assets/icon_search.svg' alt='Search date range'/>
-            </button>
+        <div id='selectorContainer'>
+            <div id='dateSelector'>
+                <input onClick={openCalender} id='calenderIcon' type='image' src={calenderIcon} alt='Open calender' width='28'/>
+                <p>{dateRange.startDate} - {dateRange.endDate}</p>
+            </div>
+            <input onClick={search} id='searchIcon' type='image' src={searchIcon} alt='Search selected dates' width='25'/>
         </div>
     )
 }
