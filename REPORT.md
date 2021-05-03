@@ -12,3 +12,4 @@ The date format changes depending on how long ago the date was. If the email was
 To finish things off, I added the ability to sort the emails by clicking on the respective table heading. This involved adding some state that controls sorting direction. The desktop version was pretty much done.
 
 I next made this desktop layout responsive. The PDF shows the mobile view as approximately 516 by 816 pixels so this is the baseline dispplay size I used. There are no new features to add - only styling. Hence, I used a custom React hook. I had never actually used custom React hooks before so I used one I found online, but it gets the job done.
+Then, I did the EmailSnippet redesign so it fits the specification.

@@ -114,12 +114,27 @@ export default function EmailContainer({ emails }) {
     )
 
     const tableMobile = (
-      <h1>FRICK</h1>
+      <>
+        <table id='emailTable'>
+            <thead id='tableHeader'>
+                <tr onClick={e => headerSort(e.target.className)}>
+                    <th className='sender' width='19%'>From {sortHeading === 'sender' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='recips' width='8%'>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='subj' width='16%'>Subject {sortHeading === 'subj' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='date' width='11%' id='dateHeader' >Date {sortHeading === 'date' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th width='46%'></th>
+                </tr>
+            </thead>
+        </table>
+        <div id='containerMobile'>
+            {localEmails.map(email => <EmailSnippet key={email.id} email={email}/>)}
+        </div>
+        </>
     )
 
     return (
         <div id='emailContainer'>
-            {emails.length === 0 ? <NoEmails/> : width < 500 ? tableMobile : tableDesktop}
+            {emails.length === 0 ? <NoEmails/> : width < 550 ? tableMobile : tableDesktop}
         </div>
     )
 }

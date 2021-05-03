@@ -15,7 +15,6 @@
     text-align: left;
     font-family: Helvetica;
     font-weight: bold;
-    color: #666666;
     font-size: 12px;
     background-color: #f6f6f6;
 }
@@ -31,6 +30,10 @@ tr {
 
 th {
     padding: 0px 19px;
+    color: #666666;
+    font-family: Helvetica;
+    font-weight: bold;
+    font-size: 12pt;
 }
 
 td {
@@ -40,9 +43,43 @@ td {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
 td.sender { width: 14%; }
 td.recips { width: 20%; }
 td.extraRecips { width: 4%; }
 td.subj { width: 47%; }
 td.att { width: 4%; }
 td.date { width: 11%; }
+
+
+@media only screen and (max-width: 550px) {
+    #emailTable {
+        margin-top: 14px;
+    }
+
+    #emailContainer {
+        margin: 0 0;
+    }
+
+    #tableHeader {
+        text-align: center;
+        height: 54px;
+        font-size: 12px;
+        border: 2px solid #e7e7e7;
+    }
+
+    th {
+        color: #666666;
+        border-left: 1px solid #979797;
+        padding: 0px 10px;
+    }
+
+    #dateHeader {
+        color: #666666;
+    }
+}
+
+#containerMobile {
+    width: 100%;
+    height: 124px;
+}

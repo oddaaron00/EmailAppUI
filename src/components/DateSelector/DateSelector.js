@@ -1,8 +1,10 @@
 import './DateSelector.css';
 import calenderIcon from '../../assets/images/icon_calender.svg';
 import searchIcon from '../../assets/images/icon_search.svg';
+import useWindowSize from '../../utils/useWindowSize';
 
 export default function DateSelector({dateRange}) {
+    const { width } = useWindowSize();
 
     const openCalender = () => {}
 

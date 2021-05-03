@@ -1,7 +1,10 @@
 import './EmailSnippet.css';
 import clipIcon from '../../assets/images/icon_clip.svg';
 import clipIconHover from '../../assets/images/icon_clip_hover.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import useWindowSize from '../../utils/useWindowSize';
+import mailIcon from '../../assets/images/icon_mail_sp.svg';
+import arrowIcon from '../../assets/images/icon_arrow02.svg';
 
 /**
  * @param {Number} email.id - ID
@@ -15,6 +18,7 @@ import { useEffect, useState } from 'react';
  */
 export default function EmailSnippet({ email }) {
     const [hover, setHover] = useState(false);
+    const { width } = useWindowSize();
 
     /*
     //Function taken from https://stackoverflow.com/questions/143815/determine-if-an-html-elements-content-overflows?noredirect=1&lq=1
@@ -60,7 +64,7 @@ export default function EmailSnippet({ email }) {
         }
     }
 
-    return (
+    const snippetDesktop = (
         <tr className='emailSnippet' style={hover ? {color: '#0033dd', backgroundColor: '#f7f9fa'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
             <td>{email.sender}</td>
             <td>{email.recips.join(', ')}</td>
@@ -69,5 +73,35 @@ export default function EmailSnippet({ email }) {
             <td>{typeof email.att != "undefined" && <img width='19px' src={hover ? clipIconHover : clipIcon}/>}</td>
             <td className='dateRow'>{determineDateFormat(email.date)}</td>
         </tr>
+    )
+
+    const snippetMobile = (
+        <div className="angry-grid">
+            <div className="item-0"></div>
+            <div id="item-1">
+                <img src={mailIcon} width='17px' className='mailIcon'/>
+            </div>
+            <div id="item-2">
+                <p style={{marginTop: '0px'}}>{email.subj}</p>
+            </div>
+            <div id="item-3">
+                <p>{email.sender}</p>
+            </div>
+            <div id="item-4">
+            <p style={typeof email.att != "undefined" ? {marginTop: '10px'} : {}}>{typeof email.att != "undefined" && <img className='clipIcon' width='19px' src={clipIcon}/>} {determineDateFormat(email.date)} <img className='arrowIcon' src={arrowIcon} width='4px'/></p>
+            </div>
+            <div id="item-5">
+                {email.recips.join(', ')}
+            </div>
+            <div id="item-6">
+                <p>+1</p>
+            </div>
+        </div>
+    )
+
+    return (
+        <>
+        {width < 550 ? snippetMobile : snippetDesktop}
+        </>
     )
 }
