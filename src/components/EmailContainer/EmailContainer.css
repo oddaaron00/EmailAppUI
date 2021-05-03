@@ -1,19 +1,5 @@
-@font-face {
-    font-family: 'PragmaticaCTT';
-    src:url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.woff') format('woff'),
-        url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.svg#PragmaticaCTT') format('svg'),
-        url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.eot'),
-        url('../../assets/fonts/PragmaticaCTT/PragmaticaCTT.ttf.eot#iefix') format('embedded-opentype'); 
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'AlteHaasGrotesk';
-    src:url('../../assets/fonts/AlteHaasGrotesk/Fonts/altehaasgroteskbold.ttf');
-}
 #emailTable {
-    margin-top: 36px;
+    margin-top: 16px;
     width: 100%;
     border-collapse: collapse;
 }
@@ -22,15 +8,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px 88px;
+    margin: 0px 72px;
 }
 
 #tableHeader {
     text-align: left;
-    font-family: 'AlteHaasGrotesk', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Helvetica;
+    font-weight: bold;
     color: #666666;
-    font-size: 12pt;
-    background-color: rgb(185, 185, 185);
+    font-size: 12px;
+    background-color: #f6f6f6;
 }
 
 #dateHeader {
@@ -38,11 +25,16 @@
 }
 
 tr {
-    border-top: 1px solid #d0d0d0;
-    border-bottom: 1px solid #d0d0d0;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+}
+
+th {
+    padding: 0px 19px;
 }
 
 td {
+    padding: 0px 19px;
     max-width: 0;
     overflow: hidden;
     white-space: nowrap;

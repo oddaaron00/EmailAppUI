@@ -61,7 +61,7 @@ export default function EmailSnippet({ email }) {
     }
 
     return (
-        <tr className='emailSnippet' style={hover ? {color: '#0033dd'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <tr className='emailSnippet' style={hover ? {color: '#0033dd', backgroundColor: '#f7f9fa'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
             <td>{email.sender}</td>
             <td>{email.recips.join(', ')}</td>
             <td>{}</td>

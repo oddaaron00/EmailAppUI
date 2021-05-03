@@ -59,6 +59,9 @@ export default function EmailContainer({ emails }) {
 
     const headerSort = colName => {
         let sortedEmails;
+        /*if (colName !== sortHeading) {
+          setSortDir(1);
+        }*/
         switch (sortDir) {
             case 0:
                 sortedEmails = localEmails.sort((a, b) => {
@@ -95,7 +98,7 @@ export default function EmailContainer({ emails }) {
             <thead id='tableHeader'>
                 <tr onClick={e => headerSort(e.target.className)}>
                     <th className='sender' width='14%'>From {sortHeading === 'sender' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='recips' width='20%'>To</th>
+                    <th className='recips' width='20%'>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
                     <th className='extraRecips' width='4%'></th>
                     <th className='subj' width='47%'>Subject {sortHeading === 'subj' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
                     <th className='att' width='4%'></th>
