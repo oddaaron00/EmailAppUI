@@ -48,9 +48,9 @@ td {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-td.senderCol { width: 14%; }
-td.recipsCol { width: 20%; }
+td.sender { width: 14%; }
+td.recips { width: 20%; }
 td.extraRecips { width: 4%; }
-td.subjCol { width: 47%; }
-td.attCol { width: 4%; }
-td.dateCol { width: 11%; }
+td.subj { width: 47%; }
+td.att { width: 4%; }
+td.date { width: 11%; }
