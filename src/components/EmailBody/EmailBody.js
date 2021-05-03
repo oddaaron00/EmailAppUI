@@ -24,6 +24,8 @@ export default function EmailBody({ body, medium }) {
                 return bodyMobile;
             case 'desktop':
                 return bodyDesktop;
+            default:
+                return bodyMobile;
         }
     }
 

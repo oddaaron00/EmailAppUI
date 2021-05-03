@@ -5,12 +5,13 @@ import EmailContainer from '../EmailContainer/EmailContainer';
 import './App.css';
 
 function App() {
-  const [dateRange, setDateRange] = useState({
+  const [dateRange] = useState({
     startDate: new Date('2020/1/1'),
     endDate: new Date('2020/1/1')
   });
 
-  /*const [dummyData, setDummyData] = useState({
+  //Dummy data with multiple emails
+  const [dummyData, setDummyData] = useState({
     emails: [
       {
         id: 0,
@@ -60,12 +61,14 @@ function App() {
         date: new Date('2010-10-10 10:10')
       }
     ]
-  })*/
-  const [dummyData, setDummyData] = useState({
-    emails: [
-      
-    ]
   })
+
+  //Dummy data with no emails
+  /*const [dummyData, setDummyData] = useState({
+    emails: [
+
+    ]
+  })*/
 
   return (
     <div className='App'>

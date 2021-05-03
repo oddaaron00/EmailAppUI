@@ -98,6 +98,7 @@ td.date { width: 11%; }
     #headerRow {
         display: flex;
         height: 0px;
+        padding-top: 1px;
         border-top: none;
         border-bottom: none;
     }
