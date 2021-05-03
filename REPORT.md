@@ -9,6 +9,6 @@ I see in the PDF that, if there is only one recipient and it is too long for the
 It's very easy to implement a rule for on:hover such that the text in the row the mouse is hovering over turns blue, but it's more difficult to implement this and have the paperclip SVG change colour too. I created a blue paperclip SVG (icon_clip_hover) and implemented some stateful logic that changed both the style of the text and the SVG on row hover.
 The date format changes depending on how long ago the date was. If the email was sent today, only the time is displayed. If it was sent this year, the shortened month and day are displayed. If longer, the full yyyy/dd/mm date is shown. I made a function that compares any given date with the current date and time to determine the correct format.
 
-To finish things off, I added the ability to sort the emails by clicking on the respective table heading. This involved ....
+To finish things off, I added the ability to sort the emails by clicking on the respective table heading. This involved adding some state that controls sorting direction. The desktop version was pretty much done.
 
-(A note from future me: it was at this point that, after hours of work, I realised that for whatever reason, my computer was displaying the PDF with washed out colours, so a lot of my work was nullified :)))) )
+I next made this desktop layout responsive. The PDF shows the mobile view as approximately 516 by 816 pixels so this is the baseline dispplay size I used. There are no new features to add - only styling. Hence, I used a custom React hook. I had never actually used custom React hooks before so I used one I found online, but it gets the job done.

@@ -4,6 +4,7 @@ import EmailSnippet from '../EmailSnippet/EmailSnippet';
 import arrowUp from '../../assets/images/icon_arrow01.svg';
 import arrowDown from '../../assets/images/icon_arrow01_down.svg';
 import { useState } from 'react';
+import useWindowSize from '../../utils/useWindowSize';
 
 export default function EmailContainer({ emails }) {
     //0 = none, 1 = asc, 2 = desc
@@ -56,6 +57,7 @@ export default function EmailContainer({ emails }) {
         date: new Date('2010-10-10 10:10')
       }]);
     const [sortHeading, setSortHeading] = useState();
+    const { width } = useWindowSize();
 
     const headerSort = colName => {
         let sortedEmails;
@@ -93,7 +95,7 @@ export default function EmailContainer({ emails }) {
         }
     }
 
-    const table = (
+    const tableDesktop = (
         <table id='emailTable'>
             <thead id='tableHeader'>
                 <tr onClick={e => headerSort(e.target.className)}>
@@ -111,10 +113,13 @@ export default function EmailContainer({ emails }) {
         </table>
     )
 
+    const tableMobile = (
+      <h1>FRICK</h1>
+    )
+
     return (
         <div id='emailContainer'>
-            {emails.length === 0 && <NoEmails/>}
-            {emails.length !== 0 && table}
+            {emails.length === 0 ? <NoEmails/> : width < 500 ? tableMobile : tableDesktop}
         </div>
     )
 }
