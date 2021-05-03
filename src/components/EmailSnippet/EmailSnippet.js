@@ -70,7 +70,7 @@ export default function EmailSnippet({ email }) {
             <td>{email.recips.join(', ')}</td>
             <td>{}</td>
             <td>{email.subj}</td>
-            <td>{typeof email.att != "undefined" && <img width='19px' src={hover ? clipIconHover : clipIcon}/>}</td>
+            <td>{typeof email.att != "undefined" && <img alt='' width='19px' src={hover ? clipIconHover : clipIcon}/>}</td>
             <td className='dateRow'>{determineDateFormat(email.date)}</td>
         </tr>
     )
@@ -79,7 +79,7 @@ export default function EmailSnippet({ email }) {
         <div className="angry-grid" style={{cursor: 'pointer'}}>
             <div className="item-0"></div>
             <div id="item-1">
-                <img src={mailIcon} width='17px' className='mailIcon'/>
+                <img src={mailIcon} alt='' width='17px' className='mailIcon'/>
             </div>
             <div id="item-2">
                 <p style={{marginTop: '0px'}}>{email.subj}</p>
@@ -88,7 +88,7 @@ export default function EmailSnippet({ email }) {
                 <p>{email.sender}</p>
             </div>
             <div id="item-4">
-                <p style={typeof email.att != "undefined" ? {marginTop: '10px'} : {}}>{typeof email.att != "undefined" && <img className='clipIcon' width='19px' src={clipIcon}/>} {determineDateFormat(email.date)} <img className='arrowIcon' src={arrowIcon} width='4px'/></p>
+                <p style={typeof email.att != "undefined" ? {marginTop: '10px'} : {}}>{typeof email.att != "undefined" && <img alt='' className='clipIcon' width='19px' src={clipIcon}/>} {determineDateFormat(email.date)} <img className='arrowIcon' src={arrowIcon} alt='' width='4px'/></p>
             </div>
             <div id="item-5">
                 {email.recips.join(', ')}
