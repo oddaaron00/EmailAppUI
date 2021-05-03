@@ -15,6 +15,7 @@
 #emailTable {
     margin-top: 36px;
     width: 100%;
+    border-collapse: collapse;
 }
 
 #emailContainer {
@@ -29,10 +30,16 @@
     font-family: 'AlteHaasGrotesk', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #666666;
     font-size: 12pt;
+    background-color: rgb(185, 185, 185);
 }
 
 #dateHeader {
     color: #111111;
+}
+
+tr {
+    border-top: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
 }
 
 td {

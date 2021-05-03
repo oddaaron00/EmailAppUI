@@ -10,3 +10,5 @@ It's very easy to implement a rule for on:hover such that the text in the row th
 The date format changes depending on how long ago the date was. If the email was sent today, only the time is displayed. If it was sent this year, the shortened month and day are displayed. If longer, the full yyyy/dd/mm date is shown. I made a function that compares any given date with the current date and time to determine the correct format.
 
 To finish things off, I added the ability to sort the emails by clicking on the respective table heading. This involved ....
+
+(A note from future me: it was at this point that, after hours of work, I realised that for whatever reason, my computer was displaying the PDF with washed out colours, so a lot of my work was nullified :)))) )
