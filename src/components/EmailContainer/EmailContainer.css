@@ -53,6 +53,10 @@ td.date { width: 11%; }
 
 
 @media only screen and (max-width: 550px) {
+    tr {
+        border: none;
+    }
+    
     #emailTable {
         margin-top: 14px;
     }
@@ -65,17 +69,36 @@ td.date { width: 11%; }
         text-align: center;
         height: 54px;
         font-size: 12px;
-        border: 2px solid #e7e7e7;
+        border-top: 2px solid #e7e7e7;
+        border-bottom: 2px solid #e7e7e7;
     }
 
     th {
         color: #666666;
-        border-left: 1px solid #979797;
         padding: 0px 10px;
     }
 
     #dateHeader {
         color: #666666;
+    }
+
+    .spaceFixTop {
+        height: 10px;
+    }
+
+    .spaceFixBottom {
+        height: 10px;
+        background-color: #f6f6f6;
+    }
+
+    #emailTable {
+        background-color: #f6f6f6;
+    }
+
+    #headerRow {
+        height: 0px;
+        border-top: none;
+        border-bottom: none;
     }
 }
 

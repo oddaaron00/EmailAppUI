@@ -88,7 +88,7 @@ export default function EmailSnippet({ email }) {
                 <p>{email.sender}</p>
             </div>
             <div id="item-4">
-            <p style={typeof email.att != "undefined" ? {marginTop: '10px'} : {}}>{typeof email.att != "undefined" && <img className='clipIcon' width='19px' src={clipIcon}/>} {determineDateFormat(email.date)} <img className='arrowIcon' src={arrowIcon} width='4px'/></p>
+                <p style={typeof email.att != "undefined" ? {marginTop: '10px'} : {}}>{typeof email.att != "undefined" && <img className='clipIcon' width='19px' src={clipIcon}/>} {determineDateFormat(email.date)} <img className='arrowIcon' src={arrowIcon} width='4px'/></p>
             </div>
             <div id="item-5">
                 {email.recips.join(', ')}

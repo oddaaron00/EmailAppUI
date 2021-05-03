@@ -98,7 +98,7 @@ export default function EmailContainer({ emails }) {
     const tableDesktop = (
         <table id='emailTable'>
             <thead id='tableHeader'>
-                <tr onClick={e => headerSort(e.target.className)}>
+                <tr onClick={e => headerSort(e.target.className)} id='headerRow'>
                     <th className='sender' width='14%'>From {sortHeading === 'sender' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
                     <th className='recips' width='20%'>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
                     <th className='extraRecips' width='4%'></th>
@@ -117,13 +117,15 @@ export default function EmailContainer({ emails }) {
       <>
         <table id='emailTable'>
             <thead id='tableHeader'>
-                <tr onClick={e => headerSort(e.target.className)}>
+              <tr className='spaceFixTop'></tr>
+                <tr onClick={e => headerSort(e.target.className)} id='headerRow'>
                     <th className='sender' width='19%'>From {sortHeading === 'sender' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='recips' width='8%'>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='subj' width='16%'>Subject {sortHeading === 'subj' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='date' width='11%' id='dateHeader' >Date {sortHeading === 'date' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='recips borderClass' width='8%'>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='subj borderClass' width='16%'>Subject {sortHeading === 'subj' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='date borderClass' width='11%' id='dateHeader' >Date {sortHeading === 'date' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
                     <th width='46%'></th>
                 </tr>
+                <tr className='spaceFixBottom'></tr>
             </thead>
         </table>
         <div id='containerMobile'>
