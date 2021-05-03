@@ -1,17 +1,17 @@
 import './DateSelector.css';
-import calenderIcon from '../../assets/images/icon_calender.svg';
+import calendarIcon from '../../assets/images/icon_calendar.svg';
 import searchIcon from '../../assets/images/icon_search.svg';
 
 export default function DateSelector({dateRange}) {
     
-    const openCalender = () => {}
+    const openCalendar = () => {}
 
     const search = () => {}
 
     return (
         <div id='selectorContainer'>
             <div id='dateSelector'>
-                <input onClick={openCalender} id='calenderIcon' type='image' src={calenderIcon} alt='Open calender' width='28'/>
+                <input onClick={openCalendar} id='calendarIcon' type='image' src={calendarIcon} alt='Open calendar' width='28'/>
                 {/*There will be a more efficient way of doing the below but this works totally fine*/}
                 <p>{dateRange.startDate.getFullYear()}/{dateRange.startDate.getMonth() + 1}/{dateRange.startDate.getDate()} - {dateRange.endDate.getFullYear()}/{dateRange.endDate.getMonth() + 1}/{dateRange.endDate.getDate()}</p>
             </div>
