@@ -65,7 +65,7 @@ export default function EmailSnippet({ email }) {
     }
 
     const snippetDesktop = (
-        <tr className='emailSnippet' style={hover ? {color: '#0033dd', backgroundColor: '#f7f9fa'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <tr className='emailSnippet' style={hover ? {color: '#0033dd', backgroundColor: '#f7f9fa', cursor: 'pointer'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
             <td>{email.sender}</td>
             <td>{email.recips.join(', ')}</td>
             <td>{}</td>
@@ -76,7 +76,7 @@ export default function EmailSnippet({ email }) {
     )
 
     const snippetMobile = (
-        <div className="angry-grid">
+        <div className="angry-grid" style={{cursor: 'pointer'}}>
             <div className="item-0"></div>
             <div id="item-1">
                 <img src={mailIcon} width='17px' className='mailIcon'/>
