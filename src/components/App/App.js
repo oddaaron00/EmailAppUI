@@ -10,7 +10,7 @@ function App() {
     endDate: new Date('2020/1/1')
   });
 
-  const [dummyData, setDummyData] = useState({
+  /*const [dummyData, setDummyData] = useState({
     emails: [
       {
         id: 0,
@@ -59,6 +59,11 @@ function App() {
         body: 'asfdgfd',
         date: new Date('2010-10-10 10:10')
       }
+    ]
+  })*/
+  const [dummyData, setDummyData] = useState({
+    emails: [
+      
     ]
   })
 
