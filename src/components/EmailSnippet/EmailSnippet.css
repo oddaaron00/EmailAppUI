@@ -65,6 +65,7 @@ grid-column-start: 3;
 
 grid-row-end: 2;
 grid-column-end: 4;
+margin-left: 10px;
 
 }
 #item-4 {
@@ -88,11 +89,7 @@ grid-column-start: 3;
 grid-row-end: 3;
 grid-column-end: 5;
 
-}
-#item-6 > * {
-    padding-right: 24px;
-    text-align: right;
-    margin-top: 3px;
+margin-left: 10px;
 }
 #item-6 {
 
@@ -102,6 +99,11 @@ grid-column-start: 5;
 grid-row-end: 3;
 grid-column-end: 6;
 
+}
+#item-6 > * {
+    padding-right: 24px;
+    text-align: right;
+    margin-top: 3px;
 }
 
 .arrowIcon {
