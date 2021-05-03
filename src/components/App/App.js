@@ -11,7 +11,7 @@ function App() {
   });
 
   //Dummy data with multiple emails
-  const [dummyData, setDummyData] = useState({
+  const [dummyData] = useState({
     emails: [
       {
         id: 0,
