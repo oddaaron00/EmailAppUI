@@ -1,0 +1,15 @@
+.emailBodyTd {
+    white-space: normal;
+    padding: 5px 19px;
+}
+
+.emailBodyDiv {
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+@media only screen and (max-width: 550px) {
+    .emailBodyDiv {
+        padding: 5px 10px;
+    }
+}

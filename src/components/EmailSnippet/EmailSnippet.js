@@ -107,7 +107,7 @@ export default function EmailSnippet({ email }) {
                 return (
                     <>
                     {snippetMobile}
-                    <EmailBody body={email.body}/>
+                    <EmailBody body={email.body} medium='mobile'/>
                     </>
                 )
             } else {
@@ -118,7 +118,7 @@ export default function EmailSnippet({ email }) {
                 return (
                     <>
                     {snippetDesktop}
-                    <EmailBody body={email.body}/>
+                    <EmailBody body={email.body} medium='desktop'/>
                     </>
                 )
             } else {
