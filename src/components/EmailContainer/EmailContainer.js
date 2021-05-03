@@ -119,11 +119,11 @@ export default function EmailContainer({ emails }) {
             <thead id='tableHeader'>
               <tr className='spaceFixTop'></tr>
                 <tr id='headerRow'>
-                    <th className='sender' width='19%' onClick={e => headerSort(e.target.className)}>From {sortHeading === 'sender' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='recips borderClass' width='8%' onClick={e => headerSort(e.target.className.split(' ')[0])}>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='subj borderClass' width='16%' onClick={e => headerSort(e.target.className.split(' ')[0])}>Subject {sortHeading === 'subj' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th className='date borderClass' width='11%' id='dateHeader' onClick={e => headerSort(e.target.className.split(' ')[0])}>Date {sortHeading === 'date' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
-                    <th width='46%'></th>
+                    <th style={{paddingLeft: '25px'}} className='sender' onClick={e => headerSort(e.target.className)}>From {sortHeading === 'sender' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='recips borderClass' onClick={e => headerSort(e.target.className.split(' ')[0])}>To {sortHeading === 'recips' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='subj borderClass' onClick={e => headerSort(e.target.className.split(' ')[0])}>Subject {sortHeading === 'subj' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th className='date borderClass' id='dateHeader' onClick={e => headerSort(e.target.className.split(' ')[0])}>Date {sortHeading === 'date' && <img src={sortDir === 1 ? arrowUp : sortDir === 2 ? arrowDown : ''} alt='' width='12px'/>}</th>
+                    <th></th>
                 </tr>
                 <tr className='spaceFixBottom'></tr>
             </thead>
