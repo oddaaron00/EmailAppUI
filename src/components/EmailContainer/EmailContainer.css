@@ -1,5 +1,5 @@
 #emailTable {
-    margin-top: 16px;
+    margin-top: 5px;
     width: 100%;
     border-collapse: collapse;
 }
@@ -50,7 +50,6 @@ td.extraRecips { width: 4%; }
 td.subj { width: 47%; }
 td.att { width: 4%; }
 td.date { width: 11%; }
-
 
 @media only screen and (max-width: 550px) {
     tr {

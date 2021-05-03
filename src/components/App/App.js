@@ -3,8 +3,11 @@ import DateSelector from '../DateSelector/DateSelector';
 import EmailCount from '../EmailCount/EmailCount';
 import EmailContainer from '../EmailContainer/EmailContainer';
 import './App.css';
+import useWindowSize from '../../utils/useWindowSize';
 
 function App() {
+  const { width } = useWindowSize();
+
   const [dateRange] = useState({
     startDate: new Date('2020/1/1'),
     endDate: new Date('2020/1/1')
@@ -74,7 +77,7 @@ function App() {
     <div className='App'>
       <DateSelector dateRange={dateRange}/>
       <EmailCount numberOfEmails={dummyData.emails.length}/>
-      <EmailContainer emails={dummyData.emails}/>
+      <EmailContainer emails={dummyData.emails} width={width}/>
     </div>
   );
 }

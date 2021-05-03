@@ -2,10 +2,10 @@ import './EmailSnippet.css';
 import clipIcon from '../../assets/images/icon_clip.svg';
 import clipIconHover from '../../assets/images/icon_clip_hover.svg';
 import { useState } from 'react';
-import useWindowSize from '../../utils/useWindowSize';
 import mailIcon from '../../assets/images/icon_mail_sp.svg';
 import arrowIcon from '../../assets/images/icon_arrow02.svg';
 import EmailBody from '../EmailBody/EmailBody';
+import Badge from '../Badge/Badge';
 
 /**
  * @param {Number} email.id - ID
@@ -17,37 +17,9 @@ import EmailBody from '../EmailBody/EmailBody';
  * @param {String} att.name - Attachment name (if present)
  * @param {String} att.size - Attachment size (if present)
  */
-export default function EmailSnippet({ email }) {
+export default function EmailSnippet({ email, width }) {
     const [hover, setHover] = useState(false);
     const [onBody, setOnBody] = useState(false);
-    const { width } = useWindowSize();
-
-    /*
-    //Function taken from https://stackoverflow.com/questions/143815/determine-if-an-html-elements-content-overflows?noredirect=1&lq=1
-    function checkOverflow(el)
-    {
-        console.log(el);
-       var curOverflow = el.style.overflow;
-    
-       if ( !curOverflow || curOverflow === "visible" )
-          el.style.overflow = "hidden";
-    
-       var isOverflowing = el.clientWidth < el.scrollWidth 
-          || el.clientHeight < el.scrollHeight;
-    
-       el.style.overflow = curOverflow;
-    
-       console.log(isOverflowing);
-    }
-
-    const isOverflown = element => {
-        let isOverflown = element.scrollHeight > element.clientHeight || element.scrollWidth > element.clientWidth;
-      }
-      
-    const fun = textArr => {
-        console.log(textArr.join(', ').scrollWidth);
-        
-    }*/
 
     const determineDateFormat = date => {
         const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -93,16 +65,16 @@ export default function EmailSnippet({ email }) {
                 <p style={typeof email.att != "undefined" ? {marginTop: '10px'} : {}}>{typeof email.att != "undefined" && <img alt='' className='clipIcon' width='19px' src={clipIcon}/>} {determineDateFormat(email.date)} <img className='arrowIcon' src={arrowIcon} alt='' width='4px'/></p>
             </div>
             <div id="item-5">
-                {email.recips.join(', ')}
+                {email.recips[0]}
             </div>
             <div id="item-6">
-                <p>+1</p>
+                {email.recips.length > 1 && <Badge num={email.recips.length - 1}/>}
             </div>
         </div>
     )
 
     const calcReturn = () => {
-        if (width < 550) {
+        if (width <= 550) {
             if (onBody) {
                 return (
                     <>

@@ -7,6 +7,10 @@
     color: #666666;
 }
 
+#emailCount > p {
+    margin: 0;
+}
+
 #countNumber {
     font-family: Helvetica;
     font-weight: bold;
