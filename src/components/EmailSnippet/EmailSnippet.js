@@ -5,6 +5,7 @@ import { useState } from 'react';
 import useWindowSize from '../../utils/useWindowSize';
 import mailIcon from '../../assets/images/icon_mail_sp.svg';
 import arrowIcon from '../../assets/images/icon_arrow02.svg';
+import EmailBody from '../EmailBody/EmailBody';
 
 /**
  * @param {Number} email.id - ID
@@ -18,6 +19,7 @@ import arrowIcon from '../../assets/images/icon_arrow02.svg';
  */
 export default function EmailSnippet({ email }) {
     const [hover, setHover] = useState(false);
+    const [onBody, setOnBody] = useState(false);
     const { width } = useWindowSize();
 
     /*
@@ -65,18 +67,18 @@ export default function EmailSnippet({ email }) {
     }
 
     const snippetDesktop = (
-        <tr className='emailSnippet' style={hover ? {color: '#0033dd', backgroundColor: '#f7f9fa', cursor: 'pointer'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <tr className='emailSnippet' style={(hover || onBody) ? {color: '#0033dd', backgroundColor: '#f7f9fa', cursor: 'pointer'} : {}} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} onDoubleClick={() => setOnBody(!onBody)}>
             <td>{email.sender}</td>
             <td>{email.recips.join(', ')}</td>
             <td>{}</td>
             <td>{email.subj}</td>
-            <td>{typeof email.att != "undefined" && <img alt='' width='19px' src={hover ? clipIconHover : clipIcon}/>}</td>
+            <td>{typeof email.att != "undefined" && <img alt='' width='19px' src={(hover || onBody) ? clipIconHover : clipIcon}/>}</td>
             <td className='dateRow'>{determineDateFormat(email.date)}</td>
         </tr>
     )
 
     const snippetMobile = (
-        <div className="angry-grid" style={{cursor: 'pointer'}}>
+        <div className="angry-grid" style={onBody ? {color: '#0033dd', backgroundColor: '#f7f9fa', cursor: 'pointer'} : {cursor: 'pointer'}} onDoubleClick={() => setOnBody(!onBody)}>
             <div className="item-0"></div>
             <div id="item-1">
                 <img src={mailIcon} alt='' width='17px' className='mailIcon'/>
@@ -99,9 +101,35 @@ export default function EmailSnippet({ email }) {
         </div>
     )
 
+    const calcReturn = () => {
+        if (width < 550) {
+            if (onBody) {
+                return (
+                    <>
+                    {snippetMobile}
+                    <EmailBody body={email.body}/>
+                    </>
+                )
+            } else {
+                return snippetMobile;
+            }
+        } else {
+            if (onBody) {
+                return (
+                    <>
+                    {snippetDesktop}
+                    <EmailBody body={email.body}/>
+                    </>
+                )
+            } else {
+                return snippetDesktop;
+            }
+        }
+    }
+
     return (
         <>
-        {width < 550 ? snippetMobile : snippetDesktop}
+        {calcReturn()}
         </>
     )
 }

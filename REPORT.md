@@ -13,3 +13,6 @@ To finish things off, I added the ability to sort the emails by clicking on the 
 
 I next made this desktop layout responsive. The PDF shows the mobile view as approximately 516 by 816 pixels so this is the baseline dispplay size I used. There are no new features to add - only styling. Hence, I used a custom React hook. I had never actually used custom React hooks before so I used one I found online, but it gets the job done.
 Then, I did the EmailSnippet redesign so it fits the specification.
+
+
+For Mission 2, I had to think. Although I haven't implemented the feature, I imagine clicking an email once would open it to fill the entire page. But this mission asks that multiple email bodies should be able to be read at once. So I thought: how about a double click and that opens the email body in place? So I made the EmailBody component.

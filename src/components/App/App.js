@@ -33,7 +33,7 @@ function App() {
           'yyy@example.com'
         ],
         subj: '[web:333] "Web Contact"',
-        body: 'testtest',
+        body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum quam at nulla rhoncus bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam consectetur ullamcorper lacus ut rutrum. Nunc fermentum odio metus, ut tincidunt lorem iaculis ac. Quisque tincidunt vehicula lacinia. Curabitur semper efficitur erat, ac elementum nunc laoreet sit amet. In fermentum leo a laoreet porta. Nunc sodales commodo massa, vitae commodo libero ullamcorper vitae. Praesent felis dui, iaculis eu varius iaculis, finibus eu est. Vivamus dignissim tempus orci, rutrum tempor est facilisis ac. Ut hendrerit turpis nibh, vel mollis tellus tincidunt at. Phasellus quis consectetur leo, efficitur venenatis lectus. Curabitur dictum, diam et malesuada condimentum, quam nunc vehicula orci, sed consectetur nisi ex blandit dui. Integer consectetur arcu nec elit tempor, eu mollis diam scelerisque. Pellentesque efficitur gravida pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum quam at nulla rhoncus bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam consectetur ullamcorper lacus ut rutrum. Nunc fermentum odio metus, ut tincidunt lorem iaculis ac. Quisque tincidunt vehicula lacinia. Curabitur semper efficitur erat, ac elementum nunc laoreet sit amet. In fermentum leo a laoreet porta. Nunc sodales commodo massa, vitae commodo libero ullamcorper vitae. Praesent felis dui, iaculis eu varius iaculis, finibus eu est. Vivamus dignissim tempus orci, rutrum tempor est facilisis ac. Ut hendrerit turpis nibh, vel mollis tellus tincidunt at. Phasellus quis consectetur leo, efficitur venenatis lectus. Curabitur dictum, diam et malesuada condimentum, quam nunc vehicula orci, sed consectetur nisi ex blandit dui. Integer consectetur arcu nec elit tempor, eu mollis diam scelerisque. Pellentesque efficitur gravida pharetra. ',
         date: new Date('2021-01-01 21:22')
       },
       {
@@ -56,7 +56,7 @@ function App() {
           'test2@test2.fr'
         ],
         subj: 'asddff',
-        body: 'lorem ipsum',
+        body: 'asfdgfd',
         date: new Date('2010-10-10 10:10')
       }
     ]
